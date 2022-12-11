@@ -8,3 +8,8 @@ The scoreboard system has been disabled. The plugin I used to implement this sys
 The code for the scoreboard system still exists, but is commented out. The plugin has been completely removed, so if you want to restore functionality, you need to reinstall it and put it in the "addons" folder.
 The music has also been replaced by silence.
 Other than these things, everything is still intact.
+
+## Using
+Simply download/pull this repository and open the project.godot file using Godot 3.x (3.5 is recommended).
+There's an issue where the UI elements don't show up properly. To fix this, open other/DefaultTheme.tres in the editor and manually assign sprites to each relevant UI element. The sprites can be found in sprites/ui/<element_name>.
+There aren't any other issues as far as I'm aware.
