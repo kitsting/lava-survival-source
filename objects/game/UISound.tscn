@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/game/UISound.gd" type="Script" id=1]
+
+[node name="hsound" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="ui" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+bus = "Sound"
+
+[node name="misc" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
+bus = "Sound"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
+bus = "Music"
+
+[node name="misc2" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
+bus = "Sound"
+
+[node name="loop" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
+bus = "Sound"

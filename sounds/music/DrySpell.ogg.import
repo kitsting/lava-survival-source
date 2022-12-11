@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DrySpell.ogg-e5397f93983316863621c240f647ba87.oggstr"
+
+[deps]
+
+source_file="res://sounds/music/DrySpell.ogg"
+dest_files=[ "res://.import/DrySpell.ogg-e5397f93983316863621c240f647ba87.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

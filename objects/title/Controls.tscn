@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://objects/title/Controls.gd" type="Script" id=2]
+
+[node name="Controls" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tabs" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+custom_constants/side_margin = 4
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gameplay" type="Panel" parent="Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 18.0
+
+[node name="Margin" type="MarginContainer" parent="Tabs/Gameplay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 10.0
+margin_right = -40.0
+margin_bottom = -38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Tabs/Gameplay/Margin"]
+margin_right = 304.0
+margin_bottom = 146.0
+
+[node name="Name" type="Label" parent="Tabs/Gameplay/Margin/HBox"]
+margin_top = 17.0
+margin_right = 186.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
+custom_constants/line_spacing = 8
+text = "Move:
+Change block types:
+Place Block: 
+Delete Block:
+Pause:
+Start Round Early:"
+
+[node name="Button" type="Label" parent="Tabs/Gameplay/Margin/HBox"]
+margin_left = 190.0
+margin_top = 17.0
+margin_right = 304.0
+margin_bottom = 129.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/line_spacing = 8
+text = "Arrow Keys or WASD
+Scroll Wheel
+Left Mouse Button
+Right Mouse Button
+Escape
+R"
+align = 2
+
+[node name="Game Functions" type="Panel" parent="Tabs"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 18.0
+
+[node name="Margin" type="MarginContainer" parent="Tabs/Game Functions"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 10.0
+margin_right = -40.0
+margin_bottom = -38.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HBox" type="HBoxContainer" parent="Tabs/Game Functions/Margin"]
+margin_right = 304.0
+margin_bottom = 146.0
+
+[node name="Name" type="Label" parent="Tabs/Game Functions/Margin/HBox"]
+margin_top = 27.0
+margin_right = 280.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+custom_constants/line_spacing = 8
+text = "Show Debug Menu:
+Reset game:
+Toggle fullscreen:
+Hide HUD:
+Take Screenshot:"
+
+[node name="Button" type="Label" parent="Tabs/Game Functions/Margin/HBox"]
+margin_left = 284.0
+margin_top = 27.0
+margin_right = 304.0
+margin_bottom = 119.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/line_spacing = 8
+text = "Tab
+F5
+F11
+F3
+F12"
+align = 2
+
+[node name="Close" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -43.0
+margin_top = -30.0
+margin_right = -10.0
+margin_bottom = -10.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="visibility_changed" from="." to="." method="_on_Controls_visibility_changed"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="button_up" from="Close" to="." method="_on_Close_button_up"]

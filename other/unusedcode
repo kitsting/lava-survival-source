@@ -1,0 +1,56 @@
+Blockhandle:
+	
+#func _process(delta):
+#	if grandparent.pausestate == false:
+#		#get_viewport().get_mouse_position()
+#		#grandparent.get_global_mouse_position()
+#		if grandparent.controlmode == 0: #Move the cursor with the mouse if no controller is plugged in
+#			mouseplacex = round((grandparent.get_global_mouse_position().x)/16)
+#			mouseplacey = round((grandparent.get_global_mouse_position().y)/16)
+#			#pass
+#
+#		if grandparent.controlmode == 1: #Move the cursor with the right stick if a controller is plugged in
+#			if Input.is_action_just_pressed("right_stick_down"):
+#				mouseplacey += 1
+#			elif Input.is_action_just_pressed("right_stick_up"):
+#				mouseplacey -= 1
+#			elif Input.is_action_just_pressed("right_stick_left"):
+#				mouseplacex -= 1
+#			elif Input.is_action_just_pressed("right_stick_right"):
+#				mouseplacex += 1
+#	pass
+	
+	
+	#	$Cursor.position.x = (mouseplacex*16)
+	#	$Cursor.position.y = (mouseplacey*16)
+		
+		#var playerpos = 0
+		#if grandparent.has_node("Player"):
+			#playerpos = grandparent.get_node("Player").position
+			#canplaceplayerpos = grandparent.get_node("Player").canplaceplayerpos
+			#toofarplayerpos = grandparent.get_node("Player").toofarplayerpos
+		
+#		#if grandparent.has_node("Cursor"):
+#			#grandparent.get_node("Cursor").pos_set(mouseplacex*16,mouseplacey*16)
+#			#if !is_cell_empty(mouseplacex,mouseplacey) or canplaceplayerpos or !toofarplayerpos or gloBlockStats.p1respawning:
+#				#grandparent.get_node("Cursor").col_set(gloConst.uiredcolor)
+#			#elif blocklimits[blockid] == 0:
+#				#grandparent.get_node("Cursor").col_set(gloConst.uipurplecolor)
+#			#else:
+#				#grandparent.get_node("Cursor").col_set(gloConst.uibluecolor)		
+#		if Input.is_action_just_pressed("ui_accept") and !gloBlockStats.p1respawning: #Left Click/Place Block
+#			place_block(mouseplacex,mouseplacey,blockid,self.blocklimits)
+#		if Input.is_action_just_pressed("right_click") and !gloBlockStats.p1respawning: #Right Click/Delete Block
+#			delete_block(mouseplacex,mouseplacey,self.blocklimits)	
+#func _input(event): #Get scroll up/scroll down
+#	if event.is_action_pressed("scroll_up"):
+#		blockid -= 1
+#		if blockid < 1:
+#			blockid = len(gloBlockStats.blocknames)-1
+#		emit_signal("blockidchange",blockid,blocknumber,blocklimits)
+#
+#	if event.is_action_pressed("scroll_down"):
+#		blockid += 1
+#		if blockid > len(gloBlockStats.blocknames)-1:
+#			blockid = 1
+#		emit_signal("blockidchange",blockid,blocknumber,blocklimits)

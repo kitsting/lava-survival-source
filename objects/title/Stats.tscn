@@ -1,0 +1,161 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://objects/title/Stats.gd" type="Script" id=2]
+
+[node name="Stats" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 60.0
+margin_top = 10.0
+margin_right = -199.0
+margin_bottom = -75.0
+
+[node name="Label" type="Label" parent="Margin"]
+margin_right = 125.0
+margin_bottom = 148.0
+text = "Highest Round:
+Total Rounds:
+Times Opened:
+Games Played:
+Blocks Placed:
+Pickups Collected:
+Times Died:
+
+Highest Score:"
+
+[node name="Margin2" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 210.0
+margin_top = 10.0
+margin_right = -60.0
+margin_bottom = -75.0
+
+[node name="Label" type="Label" parent="Margin2"]
+margin_right = 114.0
+margin_bottom = 148.0
+text = "0
+0
+0
+0
+0
+0
+0
+
+0"
+align = 2
+
+[node name="Close" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -43.0
+margin_top = -30.0
+margin_right = -10.0
+margin_bottom = -10.0
+text = "Back"
+
+[node name="Reset" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -30.0
+margin_right = 49.0
+margin_bottom = -10.0
+text = "Reset"
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Cheats" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -163.5
+margin_top = -46.0
+margin_right = 163.5
+margin_bottom = -34.0
+text = "Statistics are currently disabled because Commands are on"
+align = 1
+
+[node name="ResetConfirm" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.533333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ResetConfirm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -75.0
+margin_right = 111.0
+margin_bottom = 76.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ResetConfirm/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -93.5
+margin_top = 10.5
+margin_right = 93.5
+margin_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Are you sure you want to reset 
+your stats?
+
+Your Highscore, Achievements, and
+unlocked maps won't be removed."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="ResetConfirm/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -98.0
+margin_top = -30.0
+margin_right = -10.0
+margin_bottom = -9.99999
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm" type="Button" parent="ResetConfirm/Panel/HBox"]
+margin_right = 39.0
+margin_bottom = 20.0
+text = "Reset"
+
+[node name="Cancel" type="Button" parent="ResetConfirm/Panel/HBox"]
+margin_left = 43.0
+margin_right = 88.0
+margin_bottom = 20.0
+text = "Cancel"
+[connection signal="visibility_changed" from="." to="." method="_on_Stats_visibility_changed"]
+[connection signal="button_up" from="Close" to="." method="_on_Close_button_up"]
+[connection signal="button_up" from="Reset" to="." method="_on_Reset_button_up"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="button_up" from="ResetConfirm/Panel/HBox/Confirm" to="." method="_on_Confirm_button_up"]
+[connection signal="button_up" from="ResetConfirm/Panel/HBox/Cancel" to="." method="_on_Cancel_button_up"]

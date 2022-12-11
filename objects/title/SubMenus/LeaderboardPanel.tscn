@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://objects/title/SubMenus/LeaderboardPanel.gd" type="Script" id=2]
+
+[node name="LeaderboardPanel" type="Panel"]
+margin_right = 175.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 175, 24 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 7.0
+margin_top = -6.0
+margin_right = -6.0
+margin_bottom = 6.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Place" type="Label" parent="HBox"]
+margin_right = 8.0
+margin_bottom = 12.0
+text = "#"
+
+[node name="Badge" type="TextureRect" parent="HBox"]
+margin_left = 12.0
+margin_right = 12.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 0, 12 )
+
+[node name="Color" type="ColorRect" parent="HBox"]
+margin_left = 16.0
+margin_right = 28.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 12, 12 )
+
+[node name="Name" type="Label" parent="HBox"]
+margin_left = 32.0
+margin_right = 84.0
+margin_bottom = 12.0
+text = "Unknown"
+
+[node name="Score" type="Label" parent="HBox"]
+margin_left = 88.0
+margin_right = 162.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+text = "0"
+align = 2
+
+[node name="ShowStats" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+[connection signal="button_up" from="ShowStats" to="." method="_on_ShowStats_button_up"]
+[connection signal="mouse_entered" from="ShowStats" to="." method="_on_ShowStats_mouse_entered"]
+[connection signal="mouse_exited" from="ShowStats" to="." method="_on_ShowStats_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

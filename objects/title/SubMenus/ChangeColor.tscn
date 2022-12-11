@@ -1,0 +1,323 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://objects/title/SubMenus/ChangeColor.gd" type="Script" id=1]
+[ext_resource path="res://sprites/icons/cosmeticicon.png" type="Texture" id=2]
+[ext_resource path="res://sprites/icons/badgeicon.png" type="Texture" id=3]
+[ext_resource path="res://objects/title/SubMenus/Mannequin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/colour_picker/CustomColourPicker.tscn" type="PackedScene" id=5]
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=6]
+[ext_resource path="res://objects/title/SubMenus/ColorButton.gd" type="Script" id=7]
+
+[node name="ChangeColor" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+color = Color( 0, 0, 0, 0.533333 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -138.0
+margin_top = -87.0
+margin_right = 138.0
+margin_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="Panel"]
+anchor_bottom = 1.0
+margin_right = 174.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="Panel/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="Control" parent="Panel/Background/Margin"]
+margin_right = 154.0
+margin_bottom = 155.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Background/Margin/Color"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Panel/Background/Margin/Color/VBox"]
+margin_right = 154.0
+margin_bottom = 12.0
+text = "Color"
+align = 1
+
+[node name="CustomColourPicker" parent="Panel/Background/Margin/Color/VBox" instance=ExtResource( 5 )]
+margin_top = 27.0
+margin_bottom = 223.0
+
+[node name="Cosmetic" type="Control" parent="Panel/Background/Margin"]
+visible = false
+margin_right = 154.0
+margin_bottom = 155.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Background/Margin/Cosmetic"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Panel/Background/Margin/Cosmetic/VBox"]
+margin_right = 154.0
+margin_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cosmetic"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="GridContainer" parent="Panel/Background/Margin/Cosmetic/VBox"]
+margin_top = 27.0
+margin_right = 154.0
+margin_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_constants/vseparation = 10
+custom_constants/hseparation = 13
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Badge" type="Control" parent="Panel/Background/Margin"]
+visible = false
+margin_right = 154.0
+margin_bottom = 155.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Background/Margin/Badge"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Panel/Background/Margin/Badge/VBox"]
+margin_right = 154.0
+margin_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Badge"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="GridContainer" parent="Panel/Background/Margin/Badge/VBox"]
+margin_top = 27.0
+margin_right = 154.0
+margin_bottom = 111.0
+size_flags_vertical = 3
+custom_constants/vseparation = 10
+custom_constants/hseparation = 13
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Note" type="Label" parent="Panel/Background/Margin/Badge/VBox"]
+margin_top = 126.0
+margin_right = 154.0
+margin_bottom = 155.0
+text = "Note: Won't update until you improve your score"
+autowrap = true
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 182.0
+margin_top = 10.0
+margin_right = -8.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+margin_right = 86.0
+margin_bottom = 155.0
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox"]
+margin_right = 86.0
+margin_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+text = "Customize"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="Control" parent="Panel/Margin/VBox"]
+margin_top = 16.0
+margin_right = 86.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base" parent="Panel/Margin/VBox/Player" instance=ExtResource( 4 )]
+position = Vector2( 41.4832, 24.5876 )
+scale = Vector2( 2, 2 )
+
+[node name="Selection" type="HBoxContainer" parent="Panel/Margin/VBox"]
+margin_top = 75.0
+margin_right = 84.0
+margin_bottom = 99.0
+size_flags_horizontal = 0
+size_flags_vertical = 6
+custom_constants/separation = 6
+
+[node name="Color" type="Panel" parent="Panel/Margin/VBox/Selection"]
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Margin/VBox/Selection/Color"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -6.0
+margin_top = -6.0
+margin_right = 6.0
+margin_bottom = 6.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorButton" type="Button" parent="Panel/Margin/VBox/Selection/Color"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cosmetic" type="Panel" parent="Panel/Margin/VBox/Selection"]
+margin_left = 30.0
+margin_right = 54.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Margin/VBox/Selection/Cosmetic"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -7.0
+margin_top = -7.0
+margin_right = 7.0
+margin_bottom = 7.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CosmeticButton" type="Button" parent="Panel/Margin/VBox/Selection/Cosmetic"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Badge" type="Panel" parent="Panel/Margin/VBox/Selection"]
+margin_left = 60.0
+margin_right = 84.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Margin/VBox/Selection/Badge"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -7.0
+margin_top = -7.0
+margin_right = 7.0
+margin_bottom = 7.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BadgeButton" type="Button" parent="Panel/Margin/VBox/Selection/Badge"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/Margin"]
+margin_top = 135.0
+margin_right = 86.0
+margin_bottom = 155.0
+size_flags_vertical = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Done" type="Button" parent="Panel/Margin/Buttons"]
+margin_right = 37.0
+margin_bottom = 20.0
+text = "Done"
+
+[node name="Cancel" type="Button" parent="Panel/Margin/Buttons"]
+margin_left = 41.0
+margin_right = 86.0
+margin_bottom = 20.0
+text = "Cancel"
+[connection signal="colour_changed" from="Panel/Background/Margin/Color/VBox/CustomColourPicker" to="." method="_on_CustomColourPicker_colour_changed"]
+[connection signal="button_up" from="Panel/Margin/VBox/Selection/Color/ColorButton" to="." method="_on_ColorButton_button_up"]
+[connection signal="mouse_entered" from="Panel/Margin/VBox/Selection/Color/ColorButton" to="Panel/Margin/VBox/Selection/Color/ColorButton" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Margin/VBox/Selection/Color/ColorButton" to="Panel/Margin/VBox/Selection/Color/ColorButton" method="_on_Button_mouse_exited"]
+[connection signal="button_up" from="Panel/Margin/VBox/Selection/Cosmetic/CosmeticButton" to="." method="_on_CosmeticButton_button_up"]
+[connection signal="mouse_entered" from="Panel/Margin/VBox/Selection/Cosmetic/CosmeticButton" to="Panel/Margin/VBox/Selection/Cosmetic/CosmeticButton" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Margin/VBox/Selection/Cosmetic/CosmeticButton" to="Panel/Margin/VBox/Selection/Cosmetic/CosmeticButton" method="_on_Button_mouse_exited"]
+[connection signal="button_up" from="Panel/Margin/VBox/Selection/Badge/BadgeButton" to="." method="_on_BadgeButton_button_up"]
+[connection signal="mouse_entered" from="Panel/Margin/VBox/Selection/Badge/BadgeButton" to="Panel/Margin/VBox/Selection/Badge/BadgeButton" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Margin/VBox/Selection/Badge/BadgeButton" to="Panel/Margin/VBox/Selection/Badge/BadgeButton" method="_on_Button_mouse_exited"]
+[connection signal="button_up" from="Panel/Margin/Buttons/Done" to="." method="_on_Done_button_up"]
+[connection signal="button_up" from="Panel/Margin/Buttons/Cancel" to="." method="_on_Cancel_button_up"]

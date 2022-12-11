@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://objects/blocks/Pickup.gd" type="Script" id=1]
+[ext_resource path="res://sprites/smallblock/MiniBlockNull.png" type="Texture" id=2]
+[ext_resource path="res://sprites/particle/sparkle1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/particle/sparkle2.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 3, 3 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 3, 0, 3, 3 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 6, 0, 3, 3 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 3, 3 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 3, 0, 3, 3 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 6, 0, 3, 3 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "sparkle1",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "sparkle2",
+"speed": 10.0
+} ]
+
+[node name="Pickup" type="Area2D" groups=[
+"Pickup",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpriteCranberry" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -2.98023e-07, -2.98023e-07 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="FloatTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Sparkle" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 8 )
+animation = "sparkle2"
+
+[node name="SparkleTimer" type="Timer" parent="."]
+[connection signal="area_entered" from="." to="." method="_on_Pickup_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Node2D_body_entered"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="timeout" from="FloatTimer" to="." method="_on_FloatTimer_timeout"]
+[connection signal="animation_finished" from="Sparkle" to="." method="_on_Sparkle_animation_finished"]
+[connection signal="timeout" from="SparkleTimer" to="." method="_on_SparkleTimer_timeout"]

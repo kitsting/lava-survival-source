@@ -1,0 +1,414 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://objects/game/HUD.gd" type="Script" id=1]
+[ext_resource path="res://sprites/ui/LavaIndicatorMap2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/ui/LavaIndicatorMap2H.png" type="Texture" id=3]
+[ext_resource path="res://sprites/ui/LavaIndicator.png" type="Texture" id=4]
+[ext_resource path="res://sprites/ui/HealthBack.png" type="Texture" id=5]
+[ext_resource path="res://sprites/ui/HealthOver.png" type="Texture" id=6]
+[ext_resource path="res://sprites/ui/HealthFront.png" type="Texture" id=7]
+[ext_resource path="res://objects/game/hudelements/HotbarBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/smallblock/MiniBlockWood.png" type="Texture" id=9]
+[ext_resource path="res://sprites/smallblock/MiniBlockStone.png" type="Texture" id=10]
+[ext_resource path="res://sprites/smallblock/MiniBlockSteel.png" type="Texture" id=11]
+[ext_resource path="res://sprites/smallblock/MiniBlockMine.png" type="Texture" id=12]
+[ext_resource path="res://sprites/smallblock/MiniBlockDoor.png" type="Texture" id=13]
+[ext_resource path="res://sprites/ui/LavaIndicatorSlime.png" type="Texture" id=14]
+[ext_resource path="res://sprites/ui/LavaIndicatorSlimeH.png" type="Texture" id=15]
+[ext_resource path="res://sprites/ui/LavaIndicatorSlimeV.png" type="Texture" id=16]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 3
+script = ExtResource( 1 )
+
+[node name="WaterTop" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+margin_top = -1.0
+margin_bottom = 5.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterTopSlime" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+margin_top = -1.0
+margin_bottom = 5.0
+texture = ExtResource( 15 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterBottom" type="TextureRect" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 7.0
+rect_scale = Vector2( 1, -1 )
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterBottomSlime" type="TextureRect" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 7.0
+rect_scale = Vector2( 1, -1 )
+texture = ExtResource( 15 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterLeft" type="TextureRect" parent="."]
+visible = false
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = 5.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterLeftSlime" type="TextureRect" parent="."]
+visible = false
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = 5.0
+texture = ExtResource( 16 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterRight" type="TextureRect" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 7.0
+rect_scale = Vector2( -1, 1 )
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterRightSlime" type="TextureRect" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 7.0
+rect_scale = Vector2( -1, 1 )
+texture = ExtResource( 16 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator1" type="TextureRect" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -12.0
+margin_bottom = 12.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator1Slime" type="TextureRect" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -12.0
+margin_bottom = 12.0
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator2" type="TextureRect" parent="."]
+visible = false
+margin_left = 12.0
+margin_right = 24.0
+margin_bottom = 12.0
+rect_scale = Vector2( -1, 1 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator2Slime" type="TextureRect" parent="."]
+visible = false
+margin_left = 12.0
+margin_right = 24.0
+margin_bottom = 12.0
+rect_scale = Vector2( -1, 1 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator3" type="TextureRect" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -12.0
+margin_bottom = 12.0
+rect_scale = Vector2( 1, -1 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator3Slime" type="TextureRect" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -12.0
+margin_bottom = 12.0
+rect_scale = Vector2( 1, -1 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator4" type="TextureRect" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_right = 24.0
+margin_bottom = 12.0
+rect_scale = Vector2( -1, -1 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator4Slime" type="TextureRect" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_right = 24.0
+margin_bottom = 12.0
+rect_scale = Vector2( -1, -1 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin1" type="MarginContainer" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -24.0
+margin_right = 52.0
+margin_bottom = -7.0
+grow_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Life" type="VBoxContainer" parent="Margin1"]
+margin_right = 47.0
+margin_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/separation = 4
+
+[node name="Mines" type="VBoxContainer" parent="Margin1/Life"]
+margin_right = 47.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="P1Lives" type="HBoxContainer" parent="Margin1/Life"]
+margin_top = 4.0
+margin_right = 47.0
+margin_bottom = 4.0
+
+[node name="P1Health" type="TextureProgress" parent="Margin1/Life"]
+margin_top = 8.0
+margin_right = 47.0
+margin_bottom = 15.0
+max_value = 250.0
+value = 250.0
+texture_under = ExtResource( 5 )
+texture_over = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
+
+[node name="Margin2" type="MarginContainer" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -18.0
+margin_top = -108.0
+margin_right = -4.0
+margin_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hotbar" type="VBoxContainer" parent="Margin2"]
+margin_right = 14.0
+margin_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HotbarBox1" parent="Margin2/Hotbar" instance=ExtResource( 8 )]
+visible = false
+margin_top = 98.0
+margin_right = 14.0
+margin_bottom = 98.0
+
+[node name="HotbarBox2" parent="Margin2/Hotbar" instance=ExtResource( 8 )]
+visible = false
+margin_top = 100.0
+margin_right = 14.0
+margin_bottom = 100.0
+icon = ExtResource( 9 )
+
+[node name="HotbarBox3" parent="Margin2/Hotbar" instance=ExtResource( 8 )]
+visible = false
+margin_top = 102.0
+margin_right = 14.0
+margin_bottom = 102.0
+icon = ExtResource( 10 )
+
+[node name="HotbarBox4" parent="Margin2/Hotbar" instance=ExtResource( 8 )]
+visible = false
+margin_top = 104.0
+margin_right = 14.0
+margin_bottom = 104.0
+icon = ExtResource( 11 )
+
+[node name="HotbarBox5" parent="Margin2/Hotbar" instance=ExtResource( 8 )]
+visible = false
+margin_top = 106.0
+margin_right = 14.0
+margin_bottom = 106.0
+icon = ExtResource( 12 )
+
+[node name="HotbarBox6" parent="Margin2/Hotbar" instance=ExtResource( 8 )]
+visible = false
+margin_top = 108.0
+margin_right = 14.0
+margin_bottom = 108.0
+icon = ExtResource( 13 )
+
+[node name="Margin3" type="MarginContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.5
+margin_top = -28.0
+margin_right = 61.5
+margin_bottom = 12.0
+
+[node name="RespawnPrompt" type="VBoxContainer" parent="Margin3"]
+margin_right = 123.0
+margin_bottom = 40.0
+
+[node name="Respawn" type="Label" parent="Margin3/RespawnPrompt"]
+margin_right = 123.0
+margin_bottom = 12.0
+text = "Waiting to respawn..."
+
+[node name="Time" type="Label" parent="Margin3/RespawnPrompt"]
+margin_top = 16.0
+margin_right = 123.0
+margin_bottom = 28.0
+text = "10"
+align = 1
+
+[node name="BlockName" type="Label" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -61.6517
+margin_top = 6.09061
+margin_right = -6.6517
+margin_bottom = 18.0906
+align = 2
+
+[node name="Time" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -17.0
+margin_right = 20.0
+margin_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Time until next round: 200"
+align = 1
+
+[node name="vbox" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -33.0
+margin_right = -5.0
+margin_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="statpopups" type="VBoxContainer" parent="vbox"]
+margin_right = 63.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="vbox"]
+margin_top = 4.0
+margin_right = 63.0
+margin_bottom = 16.0
+text = "Score: 0"
+align = 2
+
+[node name="Round" type="Label" parent="vbox"]
+margin_top = 20.0
+margin_right = 63.0
+margin_bottom = 32.0
+text = "Round 9999"
+align = 2

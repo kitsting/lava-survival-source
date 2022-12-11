@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LeakyPipes.ogg-7b3d6fb2f13c529dd81124b4ca07994b.oggstr"
+
+[deps]
+
+source_file="res://sounds/music/LeakyPipes.ogg"
+dest_files=[ "res://.import/LeakyPipes.ogg-7b3d6fb2f13c529dd81124b4ca07994b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,278 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://objects/title/Leaderboard.gd" type="Script" id=2]
+[ext_resource path="res://objects/title/SubMenus/LeaderboardPanel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/title/SubMenus/Mannequin.tscn" type="PackedScene" id=4]
+
+[node name="Leaderboard" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_clip_content = true
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 9.0
+margin_right = -21.0
+margin_bottom = -35.0
+rect_clip_content = true
+
+[node name="VBox1" type="VBoxContainer" parent="Margin"]
+margin_right = 343.0
+margin_bottom = 276.0
+rect_clip_content = true
+
+[node name="P1" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_right = 343.0
+margin_bottom = 24.0
+
+[node name="P2" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_top = 28.0
+margin_right = 343.0
+margin_bottom = 52.0
+place = 2
+
+[node name="P3" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_top = 56.0
+margin_right = 343.0
+margin_bottom = 80.0
+place = 3
+
+[node name="P4" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_top = 84.0
+margin_right = 343.0
+margin_bottom = 108.0
+place = 4
+
+[node name="P5" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_top = 112.0
+margin_right = 343.0
+margin_bottom = 136.0
+place = 5
+
+[node name="P6" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_top = 140.0
+margin_right = 343.0
+margin_bottom = 164.0
+place = 6
+
+[node name="P7" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_top = 168.0
+margin_right = 343.0
+margin_bottom = 192.0
+place = 7
+
+[node name="P8" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_top = 196.0
+margin_right = 343.0
+margin_bottom = 220.0
+place = 8
+
+[node name="P9" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_top = 224.0
+margin_right = 343.0
+margin_bottom = 248.0
+place = 9
+
+[node name="P10" parent="Margin/VBox1" instance=ExtResource( 3 )]
+margin_top = 252.0
+margin_right = 343.0
+margin_bottom = 276.0
+place = 10
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -34.0
+margin_right = -5.0
+color = Color( 0.152941, 0.152941, 0.152941, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -2.0
+margin_right = -5.0
+color = Color( 0.247059, 0.247059, 0.247059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Bottom" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = -30.0
+margin_right = -9.0
+margin_bottom = -10.0
+
+[node name="View" type="Label" parent="Bottom"]
+margin_top = 4.0
+margin_right = 32.0
+margin_bottom = 16.0
+text = "View:"
+
+[node name="ChangeMode" type="Button" parent="Bottom"]
+margin_left = 36.0
+margin_right = 86.0
+margin_bottom = 20.0
+disabled = true
+text = "Highest"
+
+[node name="Label" type="Label" parent="Bottom"]
+margin_left = 90.0
+margin_top = 4.0
+margin_right = 316.0
+margin_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "Loading..."
+align = 1
+
+[node name="Close" type="Button" parent="Bottom"]
+margin_left = 320.0
+margin_right = 353.0
+margin_bottom = 20.0
+theme = ExtResource( 1 )
+text = "Back"
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -18.0
+margin_top = 12.0
+margin_right = -9.0
+margin_bottom = -36.0
+
+[node name="LoadTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="StatsMenu" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.533333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="StatsMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -129.0
+margin_top = -67.0
+margin_right = 128.0
+margin_bottom = 67.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="StatsMenu/Panel"]
+anchor_right = 1.0
+margin_bottom = 45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="StatsMenu/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsMenu/Panel/Margin"]
+margin_right = 237.0
+margin_bottom = 114.0
+
+[node name="HBox" type="HBoxContainer" parent="StatsMenu/Panel/Margin/VBoxContainer"]
+margin_right = 237.0
+margin_bottom = 12.0
+
+[node name="Place" type="Label" parent="StatsMenu/Panel/Margin/VBoxContainer/HBox"]
+margin_right = 22.0
+margin_bottom = 12.0
+text = "#1  "
+
+[node name="Name" type="Label" parent="StatsMenu/Panel/Margin/VBoxContainer/HBox"]
+margin_left = 26.0
+margin_right = 62.0
+margin_bottom = 12.0
+text = "Name:"
+
+[node name="Score" type="Label" parent="StatsMenu/Panel/Margin/VBoxContainer"]
+margin_top = 16.0
+margin_right = 237.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.611765, 0.611765, 0.611765, 1 )
+text = "Score: "
+
+[node name="Spacer1" type="Label" parent="StatsMenu/Panel/Margin/VBoxContainer"]
+margin_top = 32.0
+margin_right = 237.0
+margin_bottom = 44.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="StatsMenu/Panel/Margin/VBoxContainer"]
+margin_top = 48.0
+margin_right = 237.0
+margin_bottom = 60.0
+text = "Obtained on"
+
+[node name="Map" type="Label" parent="StatsMenu/Panel/Margin/VBoxContainer"]
+margin_top = 64.0
+margin_right = 237.0
+margin_bottom = 76.0
+text = "Map: Unknown"
+
+[node name="Base" parent="StatsMenu/Panel/Margin" instance=ExtResource( 4 )]
+position = Vector2( 225, 15 )
+scale = Vector2( 2, 2 )
+
+[node name="Ok" type="Button" parent="StatsMenu/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -44.0
+margin_top = -30.0
+margin_right = -9.99998
+margin_bottom = -9.99999
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="visibility_changed" from="." to="." method="_on_Leaderboard_visibility_changed"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="button_up" from="Bottom/ChangeMode" to="." method="_on_ChangeMode_button_up"]
+[connection signal="button_up" from="Bottom/Close" to="." method="_on_Close_button_up"]
+[connection signal="value_changed" from="VScrollBar" to="." method="_on_VScrollBar_value_changed"]
+[connection signal="timeout" from="LoadTimer" to="." method="_on_LoadTimer_timeout"]
+[connection signal="pressed" from="StatsMenu/Panel/Ok" to="." method="_on_Ok_pressed"]

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stoneplace.wav-c2dcf91851e63a1c12fd20e743c6dff6.sample"
+
+[deps]
+
+source_file="res://sounds/block/stoneplace.wav"
+dest_files=[ "res://.import/stoneplace.wav-c2dcf91851e63a1c12fd20e743c6dff6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

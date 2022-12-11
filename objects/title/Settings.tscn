@@ -1,0 +1,521 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://objects/title/Settings.gd" type="Script" id=2]
+[ext_resource path="res://objects/title/SubMenus/ChangeColor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/title/Feedback.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/title/Controls.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/title/Changes.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/title/Credits.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/title/SubMenus/Mannequin.tscn" type="PackedScene" id=8]
+
+[node name="Settings" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tabs" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_right = -170.0
+margin_bottom = -47.0
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="Panel" parent="Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 18.0
+__meta__ = {
+"_editor_description_": "Audio Settings"
+}
+
+[node name="VBoxSound" type="VBoxContainer" parent="Tabs/Audio"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 164.0
+margin_bottom = 48.0
+custom_constants/separation = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX" type="HBoxContainer" parent="Tabs/Audio/VBoxSound"]
+margin_right = 149.0
+margin_bottom = 12.0
+
+[node name="Label" type="Label" parent="Tabs/Audio/VBoxSound/SFX"]
+margin_right = 44.0
+margin_bottom = 12.0
+text = "Sound: "
+
+[node name="SoundSlider" type="HSlider" parent="Tabs/Audio/VBoxSound/SFX"]
+margin_left = 48.0
+margin_right = 125.0
+margin_bottom = 9.0
+size_flags_horizontal = 3
+min_value = -36.0
+max_value = 0.0
+__meta__ = {
+"_editor_description_": "Control sound volume"
+}
+
+[node name="Label2" type="Label" parent="Tabs/Audio/VBoxSound/SFX"]
+margin_left = 129.0
+margin_right = 149.0
+margin_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "100"
+align = 2
+
+[node name="Music" type="HBoxContainer" parent="Tabs/Audio/VBoxSound"]
+margin_top = 21.0
+margin_right = 149.0
+margin_bottom = 33.0
+
+[node name="Label" type="Label" parent="Tabs/Audio/VBoxSound/Music"]
+margin_right = 43.0
+margin_bottom = 12.0
+text = "Music:  "
+
+[node name="MusSlider" type="HSlider" parent="Tabs/Audio/VBoxSound/Music"]
+margin_left = 47.0
+margin_right = 125.0
+margin_bottom = 9.0
+size_flags_horizontal = 3
+min_value = -36.0
+max_value = 0.0
+__meta__ = {
+"_editor_description_": "Control music volume"
+}
+
+[node name="Label2" type="Label" parent="Tabs/Audio/VBoxSound/Music"]
+margin_left = 129.0
+margin_right = 149.0
+margin_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "100"
+align = 2
+
+[node name="Video" type="Panel" parent="Tabs"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 18.0
+__meta__ = {
+"_editor_description_": "Video Settings"
+}
+
+[node name="VBox" type="VBoxContainer" parent="Tabs/Video"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fullscreen" type="CheckBox" parent="Tabs/Video/VBox"]
+margin_right = 162.0
+margin_bottom = 20.0
+text = "Toggle Fullscreen"
+flat = true
+__meta__ = {
+"_editor_description_": "Whether or not the game runs in fullscreen."
+}
+
+[node name="Focus" type="CheckBox" parent="Tabs/Video/VBox"]
+margin_top = 24.0
+margin_right = 162.0
+margin_bottom = 44.0
+text = "Pause on lost focus"
+flat = true
+__meta__ = {
+"_editor_description_": "Automatically pauses the game if it's in the background."
+}
+
+[node name="Notifs" type="CheckBox" parent="Tabs/Video/VBox"]
+margin_top = 48.0
+margin_right = 162.0
+margin_bottom = 68.0
+text = "Achievement Notifications"
+flat = true
+__meta__ = {
+"_editor_description_": "Toggle whether achievement notifications are visible."
+}
+
+[node name="Stretch" type="CheckBox" parent="Tabs/Video/VBox"]
+margin_top = 72.0
+margin_right = 162.0
+margin_bottom = 92.0
+text = "Ignore Horiz. Aspect"
+flat = true
+__meta__ = {
+"_editor_description_": "Allows window to stretch infinitely horizontally. Removes black bars."
+}
+
+[node name="Accessibility" type="Panel" parent="Tabs"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 18.0
+__meta__ = {
+"_editor_description_": "Accessibility Settings"
+}
+
+[node name="VBox" type="VBoxContainer" parent="Tabs/Accessibility"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screenshake" type="CheckBox" parent="Tabs/Accessibility/VBox"]
+margin_right = 133.0
+margin_bottom = 20.0
+text = "Use Screenshake"
+flat = true
+__meta__ = {
+"_editor_description_": "Screen shaking effects"
+}
+
+[node name="Cursor" type="CheckBox" parent="Tabs/Accessibility/VBox"]
+margin_top = 24.0
+margin_right = 133.0
+margin_bottom = 44.0
+text = "Cursor Transparency"
+flat = true
+__meta__ = {
+"_editor_description_": "Whether or not the cursor transparency is dynamic."
+}
+
+[node name="Misc" type="Panel" parent="Tabs"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 18.0
+__meta__ = {
+"_editor_description_": "Misc. Options"
+}
+
+[node name="VBox" type="VBoxContainer" parent="Tabs/Misc"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cheats" type="CheckBox" parent="Tabs/Misc/VBox"]
+margin_right = 123.0
+margin_bottom = 20.0
+text = "Enable Commands"
+flat = true
+__meta__ = {
+"_editor_description_": "Enables commands, which can be used in the pause menu."
+}
+
+[node name="SidePanel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 202.0
+margin_top = 19.0
+margin_right = 3.05176e-05
+margin_bottom = 1.52588e-05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox3" type="VBoxContainer" parent="SidePanel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 161.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SidePanel/VBox3"]
+margin_right = 151.0
+margin_bottom = 12.0
+text = "Name:"
+
+[node name="LineEdit" type="LineEdit" parent="SidePanel/VBox3"]
+margin_top = 16.0
+margin_right = 151.0
+margin_bottom = 30.0
+max_length = 18
+context_menu_enabled = false
+placeholder_text = "Required for Leaderboards"
+placeholder_alpha = 0.5
+__meta__ = {
+"_editor_description_": "The name to show on online leaderboards."
+}
+
+[node name="VBox2" type="VBoxContainer" parent="SidePanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -55.5
+margin_top = 49.0
+margin_right = 67.5
+margin_bottom = 80.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="SidePanel/VBox2"]
+margin_right = 123.0
+margin_bottom = 20.0
+
+[node name="DrawText" type="Label" parent="SidePanel/VBox2/HBox"]
+margin_top = 4.0
+margin_right = 26.0
+margin_bottom = 16.0
+text = "You:"
+
+[node name="Man" type="Control" parent="SidePanel/VBox2/HBox"]
+margin_left = 30.0
+margin_right = 30.0
+margin_bottom = 20.0
+
+[node name="Base" parent="SidePanel/VBox2/HBox/Man" instance=ExtResource( 8 )]
+position = Vector2( -17.561, 10.453 )
+scale = Vector2( 2, 2 )
+
+[node name="ChangeCol" type="Button" parent="SidePanel/VBox2/HBox"]
+margin_left = 34.0
+margin_right = 99.0
+margin_bottom = 20.0
+text = "Customize"
+__meta__ = {
+"_editor_description_": "Customize the appearance of your character."
+}
+
+[node name="Close" type="Button" parent="SidePanel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -105.0
+margin_top = -30.0
+margin_right = -10.0
+margin_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource( 1 )
+text = "Save and Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="GridContainer" parent="SidePanel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -160.0
+margin_top = -84.0
+margin_right = -10.0
+margin_bottom = -40.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Submenu buttons"
+}
+
+[node name="Changelog" type="Button" parent="SidePanel/Buttons"]
+margin_right = 68.0
+margin_bottom = 20.0
+text = "Changelog"
+__meta__ = {
+"_editor_description_": "Show the changelog."
+}
+
+[node name="Credits" type="Button" parent="SidePanel/Buttons"]
+margin_left = 72.0
+margin_right = 150.0
+margin_bottom = 20.0
+text = "Credits"
+__meta__ = {
+"_editor_description_": "Shows the credits screen."
+}
+
+[node name="Feedback" type="Button" parent="SidePanel/Buttons"]
+margin_top = 24.0
+margin_right = 68.0
+margin_bottom = 44.0
+text = "Feedback"
+__meta__ = {
+"_editor_description_": "Leave feedback."
+}
+
+[node name="Controls" type="Button" parent="SidePanel/Buttons"]
+margin_left = 72.0
+margin_top = 24.0
+margin_right = 150.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+text = "Controls"
+__meta__ = {
+"_editor_description_": "Submenu Buttons"
+}
+
+[node name="DescPanel" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -49.0
+margin_right = 204.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="DescPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="Label" parent="DescPanel/Margin"]
+margin_right = 184.0
+margin_bottom = 29.0
+text = "Hover over an option to see what it does."
+autowrap = true
+
+[node name="Feedback" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = -0.5
+margin_top = 0.0
+margin_right = 0.5
+margin_bottom = 0.0
+
+[node name="Controls" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="Changes" parent="." instance=ExtResource( 6 )]
+visible = false
+margin_left = -0.5
+margin_right = 0.5
+
+[node name="Credits" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="CommandConfirm" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.533333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CommandConfirm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -131.0
+margin_top = -48.5
+margin_right = 131.0
+margin_bottom = 48.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CommandConfirm/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -116.0
+margin_top = -36.0
+margin_right = 116.0
+margin_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Turning on commands will disable
+statistics and leaderboards.
+Are you sure you want to continue?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CommandConfirm/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -79.0
+margin_top = -25.0
+margin_right = -6.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm" type="Button" parent="CommandConfirm/Panel/HBoxContainer"]
+margin_right = 24.0
+margin_bottom = 20.0
+text = "OK"
+
+[node name="Deny" type="Button" parent="CommandConfirm/Panel/HBoxContainer"]
+margin_left = 28.0
+margin_right = 73.0
+margin_bottom = 20.0
+text = "Cancel"
+
+[node name="ChangeColor" parent="." instance=ExtResource( 3 )]
+visible = false
+[connection signal="visibility_changed" from="." to="." method="_on_Settings_visibility_changed"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="mouse_entered" from="Tabs/Audio/VBoxSound/SFX/SoundSlider" to="." method="_on_SoundSlider_mouse_entered"]
+[connection signal="value_changed" from="Tabs/Audio/VBoxSound/SFX/SoundSlider" to="." method="_on_SoundSlider_value_changed"]
+[connection signal="mouse_entered" from="Tabs/Audio/VBoxSound/Music/MusSlider" to="." method="_on_MusSlider_mouse_entered"]
+[connection signal="value_changed" from="Tabs/Audio/VBoxSound/Music/MusSlider" to="." method="_on_MusSlider_value_changed"]
+[connection signal="pressed" from="Tabs/Video/VBox/Fullscreen" to="." method="_on_Fullscreen_pressed"]
+[connection signal="pressed" from="Tabs/Video/VBox/Focus" to="." method="_on_Focus_pressed"]
+[connection signal="pressed" from="Tabs/Video/VBox/Notifs" to="." method="_on_Notifs_pressed"]
+[connection signal="toggled" from="Tabs/Video/VBox/Stretch" to="." method="_on_Stretch_pressed"]
+[connection signal="pressed" from="Tabs/Accessibility/VBox/Screenshake" to="." method="_on_Screenshake_pressed"]
+[connection signal="pressed" from="Tabs/Accessibility/VBox/Cursor" to="." method="_on_Cursor_pressed"]
+[connection signal="pressed" from="Tabs/Misc/VBox/Cheats" to="." method="_on_Cheats_pressed"]
+[connection signal="mouse_entered" from="SidePanel/VBox3/LineEdit" to="." method="_on_LineEdit_mouse_entered"]
+[connection signal="text_changed" from="SidePanel/VBox3/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="button_up" from="SidePanel/VBox2/HBox/ChangeCol" to="." method="_on_ChangeCol_button_up"]
+[connection signal="button_up" from="SidePanel/Close" to="." method="_on_Close_button_up"]
+[connection signal="mouse_entered" from="SidePanel/Buttons" to="." method="_on_Buttons_mouse_entered"]
+[connection signal="button_up" from="SidePanel/Buttons/Changelog" to="." method="_on_Changelog_button_up"]
+[connection signal="button_up" from="SidePanel/Buttons/Credits" to="." method="_on_Credits_button_up"]
+[connection signal="button_up" from="SidePanel/Buttons/Feedback" to="." method="_on_Feedback_button_up"]
+[connection signal="button_up" from="SidePanel/Buttons/Controls" to="." method="_on_Controls_button_up"]
+[connection signal="button_up" from="CommandConfirm/Panel/HBoxContainer/Confirm" to="." method="_on_Confirm_button_up"]
+[connection signal="button_up" from="CommandConfirm/Panel/HBoxContainer/Deny" to="." method="_on_Deny_button_up"]

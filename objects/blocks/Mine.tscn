@@ -1,0 +1,97 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://objects/blocks/Mine.gd" type="Script" id=1]
+[ext_resource path="res://sprites/misc/explosion/TestExplosion1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/misc/explosion/TestExplosion2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/misc/explosion/TestExplosion3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/misc/explosion/TestExplosion4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/misc/explosion/TestExplosion5.png" type="Texture" id=6]
+[ext_resource path="res://sprites/misc/explosion/TestExplosion6.png" type="Texture" id=7]
+[ext_resource path="res://sprites/block/mine/landmine.png" type="Texture" id=8]
+[ext_resource path="res://sprites/block/mine/landmineon.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "exploding",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "primed",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7, 7 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 18, 17 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "blink1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "death"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false, true, false, true, false, true ]
+}
+
+[node name="Mine" type="Area2D" groups=[
+"BlockMine",
+]]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "primed"
+speed_scale = 1.5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+
+[node name="Explosion" type="Area2D" parent="."]
+visible = false
+
+[node name="Collide" type="CollisionShape2D" parent="Explosion"]
+shape = SubResource( 3 )
+
+[node name="Light" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 9 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/blink1 = SubResource( 4 )
+anims/death = SubResource( 5 )
+[connection signal="area_entered" from="." to="." method="_on_Mine_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Mine_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_Mine_body_entered"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+[connection signal="area_entered" from="Explosion" to="." method="_on_Explosion_area_entered"]
+[connection signal="visibility_changed" from="Light" to="." method="_on_Light_visibility_changed"]
+[connection signal="animation_finished" from="Anim" to="." method="_on_Anim_animation_finished"]

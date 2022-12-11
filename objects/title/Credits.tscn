@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://objects/title/Credits.gd" type="Script" id=2]
+
+[node name="Credits" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -9.99997
+margin_bottom = -9.99998
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Margin"]
+margin_right = 364.0
+margin_bottom = 196.0
+bbcode_enabled = true
+bbcode_text = "Game solely developed by [color=red][url=https://twitter.com/KSticcGames]KSting[/url][/color]
+
+Huge thanks to the original testers: Quincy, Ezra, and Logan
+
+CC0 Soundtrack made by [color=red][url=https://twitter.com/CarnotaurusTeam]CarnotarusTeam[/url][/color]
+
+
+And, of course, thank you, for picking up this game out of all the others."
+text = "Game solely developed by KSting
+
+Huge thanks to the original testers: Quincy, Ezra, and Logan
+
+CC0 Soundtrack made by CarnotarusTeam
+
+
+And, of course, thank you, for picking up this game out of all the others."
+
+[node name="Close" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -43.0
+margin_top = -30.0
+margin_right = -10.0
+margin_bottom = -10.0
+text = "Back"
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="visibility_changed" from="." to="." method="_on_Controls_visibility_changed"]
+[connection signal="meta_clicked" from="Margin/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="button_up" from="Close" to="." method="_on_Close_button_up"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

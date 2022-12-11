@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://objects/lava/lava.gd" type="Script" id=1]
+[ext_resource path="res://sprites/block/lavamap1anim.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Build"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[node name="Lava" type="Area2D" groups=[
+"Lava",
+]]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
+texture = ExtResource( 2 )
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="DecayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SpreadTimer" type="Timer" parent="."]
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/Build = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="DecayTimer" to="." method="_on_DecayTimer_timeout"]
+[connection signal="timeout" from="SpreadTimer" to="." method="_on_SpreadTimer_timeout"]

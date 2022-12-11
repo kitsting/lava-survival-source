@@ -1,0 +1,244 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://objects/menus/Title.gd" type="Script" id=2]
+[ext_resource path="res://sprites/title/background.png" type="Texture" id=3]
+[ext_resource path="res://objects/title/Achievements.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/title/Controls.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/title/Title1.png" type="Texture" id=7]
+[ext_resource path="res://sprites/smallblock/MiniBlockWood.png" type="Texture" id=8]
+[ext_resource path="res://sprites/icons/settingsicon.png" type="Texture" id=9]
+[ext_resource path="res://sprites/icons/statsicon.png" type="Texture" id=10]
+[ext_resource path="res://sprites/icons/leaderboardicon.png" type="Texture" id=11]
+[ext_resource path="res://sprites/icons/quiticon.png" type="Texture" id=12]
+[ext_resource path="res://objects/title/Settings.tscn" type="PackedScene" id=13]
+[ext_resource path="res://objects/title/StageSelect.tscn" type="PackedScene" id=14]
+[ext_resource path="res://objects/title/Leaderboard.tscn" type="PackedScene" id=16]
+[ext_resource path="res://fonts/BoldVerdanaSmall.tres" type="DynamicFont" id=17]
+
+[node name="Title" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( -50.2369, -48.9993 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 500, 300 )
+
+[node name="Title" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -75.0
+margin_right = 130.0
+margin_bottom = -35.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -33.0
+margin_right = 72.0
+margin_bottom = -5.0
+
+[node name="Copyright" type="Label" parent="Text"]
+margin_right = 67.0
+margin_bottom = 12.0
+text = "2020 KSting"
+
+[node name="Version" type="Label" parent="Text"]
+margin_top = 16.0
+margin_right = 67.0
+margin_bottom = 28.0
+text = "Version ?"
+
+[node name="Score" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -273.0
+margin_top = -17.0
+margin_right = -5.0
+margin_bottom = -5.0
+text = "Score"
+align = 2
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.5
+margin_top = -19.0
+margin_right = 80.5
+margin_bottom = 73.0
+
+[node name="HBox" type="HBoxContainer" parent="Buttons"]
+margin_right = 161.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 1 )
+alignment = 1
+
+[node name="Start" type="Button" parent="Buttons/HBox"]
+margin_right = 161.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 17 )
+text = "Play Game  "
+icon = ExtResource( 8 )
+
+[node name="Multiplayer" type="Button" parent="Buttons/HBox"]
+visible = false
+margin_left = 93.0
+margin_right = 161.0
+margin_bottom = 20.0
+theme = ExtResource( 1 )
+disabled = true
+text = "Multiplayer"
+
+[node name="Settings" type="Button" parent="Buttons"]
+margin_top = 24.0
+margin_right = 161.0
+margin_bottom = 44.0
+theme = ExtResource( 1 )
+text = "Settings"
+icon = ExtResource( 9 )
+
+[node name="HBox2" type="HBoxContainer" parent="Buttons"]
+margin_top = 48.0
+margin_right = 161.0
+margin_bottom = 68.0
+
+[node name="Stats" type="Button" parent="Buttons/HBox2"]
+margin_right = 93.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Achievements"
+icon = ExtResource( 10 )
+
+[node name="Leaderboard" type="Button" parent="Buttons/HBox2"]
+margin_left = 97.0
+margin_right = 161.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+disabled = true
+text = "Scores"
+icon = ExtResource( 11 )
+
+[node name="Quit" type="Button" parent="Buttons"]
+margin_top = 72.0
+margin_right = 161.0
+margin_bottom = 92.0
+theme = ExtResource( 1 )
+text = "Quit Game  "
+icon = ExtResource( 12 )
+
+[node name="Settings" parent="." instance=ExtResource( 13 )]
+visible = false
+
+[node name="StageSelect" parent="." instance=ExtResource( 14 )]
+visible = false
+
+[node name="Leaderboard" parent="." instance=ExtResource( 16 )]
+visible = false
+
+[node name="Achievements" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -4.99997
+margin_bottom = -4.99998
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="FirstTime" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.533333 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Panel" type="Panel" parent="FirstTime"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -104.0
+margin_top = -52.0
+margin_right = 105.0
+margin_bottom = 51.0
+
+[node name="Margin" type="MarginContainer" parent="FirstTime/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="FirstTime/Panel/Margin"]
+margin_right = 189.0
+margin_bottom = 83.0
+
+[node name="Label" type="Label" parent="FirstTime/Panel/Margin/VBox"]
+margin_right = 189.0
+margin_bottom = 46.0
+size_flags_vertical = 1
+text = "This seems to be your first time playing. Would you like to look at the controls?"
+align = 1
+autowrap = true
+
+[node name="HBox" type="HBoxContainer" parent="FirstTime/Panel/Margin/VBox"]
+margin_top = 63.0
+margin_right = 189.0
+margin_bottom = 83.0
+grow_horizontal = 0
+size_flags_horizontal = 9
+size_flags_vertical = 10
+alignment = 1
+
+[node name="Confirm" type="Button" parent="FirstTime/Panel/Margin/VBox/HBox"]
+margin_left = 67.0
+margin_right = 95.0
+margin_bottom = 20.0
+text = "Yes"
+
+[node name="Deny" type="Button" parent="FirstTime/Panel/Margin/VBox/HBox"]
+margin_left = 99.0
+margin_right = 122.0
+margin_bottom = 20.0
+text = "No"
+
+[node name="Controls" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[connection signal="button_up" from="Buttons/HBox/Start" to="." method="_on_Start_button_up"]
+[connection signal="button_up" from="Buttons/HBox/Multiplayer" to="." method="_on_Multiplayer_button_up"]
+[connection signal="button_up" from="Buttons/Settings" to="." method="_on_Settings_button_up"]
+[connection signal="button_up" from="Buttons/HBox2/Stats" to="." method="_on_Stats_button_up"]
+[connection signal="button_up" from="Buttons/HBox2/Leaderboard" to="." method="_on_Leaderboard_button_up"]
+[connection signal="button_up" from="Buttons/Quit" to="." method="_on_Quit_button_up"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="button_up" from="FirstTime/Panel/Margin/VBox/HBox/Confirm" to="." method="_on_Confirm_button_up"]
+[connection signal="button_up" from="FirstTime/Panel/Margin/VBox/HBox/Deny" to="." method="_on_Deny_button_up"]

@@ -1,0 +1,198 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://objects/title/Achievements.gd" type="Script" id=2]
+[ext_resource path="res://objects/title/Stats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/block/lava2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/ui/HealthFront.png" type="Texture" id=5]
+[ext_resource path="res://sprites/ui/HealthBack.png" type="Texture" id=6]
+
+[node name="Achievements" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -54.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="GridContainer" parent="Margin"]
+margin_left = 182.0
+margin_top = 76.0
+margin_right = 182.0
+margin_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 7
+
+[node name="HBox" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -131.0
+margin_top = -30.0
+margin_right = -6.0
+margin_bottom = -9.99997
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Button" parent="HBox"]
+margin_right = 88.0
+margin_bottom = 20.0
+text = "View Statistics"
+
+[node name="Close" type="Button" parent="HBox"]
+margin_left = 92.0
+margin_right = 125.0
+margin_bottom = 20.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Name" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -122.0
+margin_top = -49.0
+margin_right = 122.0
+margin_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hover over an achievement to see it's name"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameReset" type="Timer" parent="."]
+
+[node name="CheevoInfo" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.533333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CheevoInfo"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -114.0
+margin_top = -59.0
+margin_right = 114.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CheevoInfo/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -85.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CheevoInfo/Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 26.0
+margin_bottom = 26.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CheevoInfo/Panel"]
+margin_left = 35.0
+margin_top = 12.0
+margin_right = 215.0
+margin_bottom = 24.0
+text = "Achievement Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CheevoInfo/Panel"]
+margin_left = 10.0
+margin_top = 40.0
+margin_right = 217.0
+margin_bottom = 86.0
+text = "Achievement Description"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoClose" type="Button" parent="CheevoInfo/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -49.0
+margin_top = -30.0
+margin_right = -10.0
+margin_bottom = -10.0
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reward" type="Label" parent="CheevoInfo/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -26.4553
+margin_right = 90.0
+margin_bottom = -14.4553
+text = "Reward: None"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Progress" type="TextureProgress" parent="CheevoInfo/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -102.003
+margin_top = -22.6783
+margin_right = -55.0025
+margin_bottom = -15.6783
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" parent="." instance=ExtResource( 3 )]
+visible = false
+[connection signal="visibility_changed" from="." to="." method="_on_Controls_visibility_changed"]
+[connection signal="button_up" from="HBox/Stats" to="." method="_on_Stats_button_up"]
+[connection signal="button_up" from="HBox/Close" to="." method="_on_Close_button_up"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="timeout" from="NameReset" to="." method="_on_NameReset_timeout"]
+[connection signal="pressed" from="CheevoInfo/Panel/InfoClose" to="." method="_on_InfoClose_pressed"]

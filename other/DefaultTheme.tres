@@ -1,0 +1,305 @@
+[gd_resource type="Theme" load_steps=37 format=2]
+
+[ext_resource path="res://sprites/ui/check/checkempty.png" type="Texture" id=1]
+[ext_resource path="res://sprites/ui/check/checkfull.png" type="Texture" id=2]
+[ext_resource path="res://sprites/ui/panel/panelnormal.png" type="Texture" id=3]
+[ext_resource path="res://sprites/ui/button/ButtonFocus.png" type="Texture" id=4]
+[ext_resource path="res://sprites/ui/button/ButtonDisabled.png" type="Texture" id=5]
+[ext_resource path="res://sprites/ui/button/ButtonHover.png" type="Texture" id=6]
+[ext_resource path="res://sprites/ui/button/ButtonNormal.png" type="Texture" id=7]
+[ext_resource path="res://sprites/ui/button/ButtonPressed.png" type="Texture" id=8]
+[ext_resource path="res://sprites/ui/scroll/scrolltick.png" type="Texture" id=9]
+[ext_resource path="res://sprites/ui/scroll/scroller.png" type="Texture" id=10]
+[ext_resource path="res://sprites/ui/tab/tabbg.png" type="Texture" id=11]
+[ext_resource path="res://sprites/ui/tab/tabdisabled.png" type="Texture" id=12]
+[ext_resource path="res://fonts/FontVerdanaSmall.tres" type="DynamicFont" id=13]
+[ext_resource path="res://sprites/ui/tab/tabfg.png" type="Texture" id=14]
+
+[sub_resource type="StyleBoxTexture" id=1]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=2]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=3]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 6.0
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+
+[sub_resource type="StyleBoxTexture" id=4]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=5]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 6.0
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 5, 7 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 3, 3 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=8]
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxTexture" id=9]
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=10]
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+expand_margin_top = 6.0
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=12]
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=13]
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=19]
+region_rect = Rect2( 0, 0, 5, 7 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=20]
+region_rect = Rect2( 0, 0, 5, 7 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=21]
+region_rect = Rect2( 0, 0, 5, 7 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=22]
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[resource]
+default_font = ExtResource( 13 )
+Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+Button/colors/font_color_disabled = Color( 0.34902, 0.34902, 0.34902, 0.54902 )
+Button/colors/font_color_hover = Color( 0.67451, 0.772549, 0.921569, 1 )
+Button/colors/font_color_pressed = Color( 0.498039, 0.627451, 0.894118, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = ExtResource( 13 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 5 )
+CheckBox/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckBox/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
+CheckBox/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckBox/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 4
+CheckBox/fonts/font = ExtResource( 13 )
+CheckBox/icons/checked = ExtResource( 2 )
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/unchecked = ExtResource( 1 )
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/hover_pressed = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
+ColorPicker/constants/h_width = 20
+ColorPicker/constants/label_width = 10
+ColorPicker/constants/margin = 2
+ColorPicker/constants/sv_height = 20
+ColorPicker/constants/sv_width = 20
+ColorPicker/icons/add_preset = null
+ColorPicker/icons/color_hue = null
+ColorPicker/icons/color_sample = null
+ColorPicker/icons/preset_bg = null
+ColorPicker/icons/screen_picker = null
+HSlider/icons/grabber = null
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = null
+HSlider/icons/tick = null
+HSlider/styles/focus = null
+HSlider/styles/grabber_area = SubResource( 6 )
+HSlider/styles/grabber_disabled = null
+HSlider/styles/grabber_highlight = null
+HSlider/styles/slider = SubResource( 7 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 5
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = ExtResource( 13 )
+Label/styles/normal = null
+LineEdit/colors/clear_button_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.941176, 0.941176, 0.941176, 1 )
+LineEdit/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/selection_color = Color( 0.490196, 0.490196, 0.490196, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = ExtResource( 13 )
+LineEdit/icons/clear = null
+LineEdit/styles/focus = SubResource( 8 )
+LineEdit/styles/normal = SubResource( 9 )
+LineEdit/styles/read_only = SubResource( 10 )
+Panel/styles/panel = SubResource( 11 )
+Panel/styles/panelf = SubResource( 12 )
+Panel/styles/panelnc = SubResource( 13 )
+PanelContainer/styles/panel = SubResource( 14 )
+TabContainer/colors/font_color_bg = Color( 0.69, 0.69, 0.69, 1 )
+TabContainer/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+TabContainer/colors/font_color_fg = Color( 0.94, 0.94, 0.94, 1 )
+TabContainer/constants/hseparation = 4
+TabContainer/constants/label_valign_bg = 2
+TabContainer/constants/label_valign_fg = 0
+TabContainer/constants/side_margin = 8
+TabContainer/constants/top_margin = 24
+TabContainer/fonts/font = ExtResource( 13 )
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = SubResource( 15 )
+TabContainer/styles/tab_bg = SubResource( 16 )
+TabContainer/styles/tab_disabled = SubResource( 17 )
+TabContainer/styles/tab_fg = SubResource( 18 )
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 19 )
+VScrollBar/styles/grabber_highlight = SubResource( 20 )
+VScrollBar/styles/grabber_pressed = SubResource( 21 )
+VScrollBar/styles/scroll = SubResource( 22 )
+VScrollBar/styles/scroll_focus = null

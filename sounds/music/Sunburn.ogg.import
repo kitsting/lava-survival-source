@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sunburn.ogg-ea5bc70bcc4f9a5be5f23336634a1653.oggstr"
+
+[deps]
+
+source_file="res://sounds/music/Sunburn.ogg"
+dest_files=[ "res://.import/Sunburn.ogg-ea5bc70bcc4f9a5be5f23336634a1653.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

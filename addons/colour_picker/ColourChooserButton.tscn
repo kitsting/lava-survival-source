@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/colour_picker/ColourPickerButton.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="ColorChooserButton" type="MarginContainer"]
+margin_right = 56.0
+margin_bottom = 27.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 7.0
+margin_right = 56.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_constants/shadow_as_outline = 1
+text = "colour"
+align = 1
+valign = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 56.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="." groups=[
+"audio_click_button",
+]]
+margin_right = 56.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+custom_styles/focus = SubResource( 1 )

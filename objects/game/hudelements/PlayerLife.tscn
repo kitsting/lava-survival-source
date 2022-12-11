@@ -1,0 +1,58 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://sprites/ui/LifeSmall.png" type="Texture" id=1]
+[ext_resource path="res://objects/game/hudelements/PlayerLife.gd" type="Script" id=2]
+[ext_resource path="res://sprites/ui/LifeSmallBeat.png" type="Texture" id=3]
+[ext_resource path="res://sprites/ui/heartbreak/LifeSmallBreaking4.png" type="Texture" id=4]
+[ext_resource path="res://sprites/ui/heartbreak/LifeSmallBreaking8.png" type="Texture" id=5]
+[ext_resource path="res://sprites/ui/heartbreak/LifeSmallBreaking5.png" type="Texture" id=6]
+[ext_resource path="res://sprites/ui/heartbreak/LifeSmallBreaking7.png" type="Texture" id=7]
+[ext_resource path="res://sprites/ui/heartbreak/LifeSmallBreaking6.png" type="Texture" id=8]
+[ext_resource path="res://sprites/ui/heartbreak/LifeSmallBreaking9.png" type="Texture" id=9]
+[ext_resource path="res://sprites/ui/LifeSmallBroken.png" type="Texture" id=10]
+[ext_resource path="res://sprites/ui/heartbreak/LifeSmallBreaking2.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Beating"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Breaking"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ]
+}
+
+[node name="TextureRect" type="TextureRect"]
+margin_right = 9.0
+margin_bottom = 8.0
+texture = ExtResource( 10 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Beating = SubResource( 1 )
+anims/Breaking = SubResource( 2 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

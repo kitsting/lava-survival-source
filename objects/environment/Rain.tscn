@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 300, 1 )
+flag_disable_z = true
+spread = 2.0
+gravity = Vector3( 0, 50, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 1.5
+scale_random = 1.0
+color = Color( 0.34902, 0.458824, 1, 1 )
+
+[node name="Rain" type="CanvasLayer"]
+pause_mode = 1
+layer = 3
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 192, -70 )
+rotation = 1.65806
+scale = Vector2( 4, 1 )
+amount = 50
+process_material = SubResource( 1 )

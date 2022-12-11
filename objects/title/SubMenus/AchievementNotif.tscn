@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://other/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://sprites/block/lava2.png" type="Texture" id=2]
+[ext_resource path="res://objects/title/SubMenus/AchievementNotif.gd" type="Script" id=3]
+
+[node name="AchievementNotif" type="CanvasLayer"]
+pause_mode = 2
+layer = 128
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+margin_left = 90.0
+margin_right = -90.0
+margin_bottom = 26.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Panel/Margin"]
+margin_right = 194.0
+margin_bottom = 16.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Margin/HBox"]
+margin_left = 35.0
+margin_right = 51.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin/HBox"]
+margin_left = 55.0
+margin_right = 159.0
+margin_bottom = 16.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/HBox/VBox"]
+margin_top = 2.0
+margin_right = 104.0
+margin_bottom = 14.0
+text = "Acheivement Name"
+
+[node name="Tween" type="Tween" parent="Panel"]
+
+[node name="Timer" type="Timer" parent="Panel"]
+[connection signal="tween_all_completed" from="Panel/Tween" to="Panel" method="_on_Tween_tween_all_completed"]
+[connection signal="timeout" from="Panel/Timer" to="Panel" method="_on_Timer_timeout"]
